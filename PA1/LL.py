@@ -94,3 +94,15 @@ class LinkedList:
         # TODO: Implement print_list
         pass
 
+if __name__ == "__main__":
+    ll = LinkedList()
+    print(ll.is_empty())   # True
+    ll.append(10)
+    ll.append(20)
+    ll.prepend(5)
+    print(ll.print_list()) # 5 -> 10 -> 20 -> None
+    print(ll.size())       # 3
+    ll.delete(10)
+    print(ll.print_list()) # 5 -> 20 -> None
+    print(ll.find(20))     # True
+    print(ll.find(99))     # False
