@@ -42,10 +42,10 @@ def run_sanity_check():
             )
 
             if result.returncode == 0:
-                print(f"[{pa_dir}] PASSED ✅")
+                print(f"[{pa_dir}] PASSED (OK)")
                 passed_tests.append(pa_dir)
             else:
-                print(f"[{pa_dir}] FAILED ❌")
+                print(f"[{pa_dir}] FAILED (X)")
                 print("--- Error Output ---")
                 print(result.stderr)
                 print("--------------------")
