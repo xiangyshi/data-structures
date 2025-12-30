@@ -1,25 +1,29 @@
 class Stack:
     """
-    A class representing a stack data structure.
+    A class representing a stack data structure using a fixed-size list (array).
     The stack follows the Last-In-First-Out (LIFO) principle.
-    The underlying data structure is a Python list.
+    The underlying data structure is a fixed-size Python list.
     """
 
-    def __init__(self):
+    def __init__(self, capacity=10):
         """
-        Initializes a new empty stack.
+        Initializes a new empty stack with a fixed capacity.
+        
+        Parameters:
+        capacity: The initial size of the underlying list (default 10).
         """
-        # TODO: Initialize the underlying list here
+        # TODO: Initialize self.capacity, self.num_items, and self.items (list of Nones)
         pass
 
     def push(self, item):
         """
         Adds a new item to the top of the stack.
+        If the stack is full, double the capacity and resize.
         
         Parameters:
         item: The item to be added.
         """
-        # TODO: Implement push operation
+        # TODO: Check capacity, resize if needed, then add item
         pass
 
     def pop(self):
@@ -65,27 +69,16 @@ class Stack:
         Returns:
         An integer representing the size of the stack.
         """
-        # TODO: Implement size calculation
+        # TODO: Return num_items
         pass
 
 # Example Usage
 if __name__ == "__main__":
-    s = Stack()
-    print(s.is_empty()) # True
-    s.push(4)
-    s.push('dog')
-    print(s.peek()) # dog
-    s.push(True)
+    s = Stack(capacity=2)
+    s.push(1)
+    s.push(2)
+    # Stack is full (size 2, capacity 2)
+    s.push(3) 
+    # Resize triggers: Capacity becomes 4
     print(s.size()) # 3
-    print(s.is_empty()) # False
-    s.push(8.4)
-    print(s.pop()) # 8.4
-    print(s.pop())
-
-    # Expected Output:
-    # True
-    # dog
-    # 3
-    # False
-    # 8.4
-    # True
+    print(s.pop())  # 3
