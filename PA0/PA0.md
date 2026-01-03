@@ -22,17 +22,30 @@ You are required to implement a Python class named `HashTable` in a file named `
 
 3.  **`insert(self, key, value)`**
     *   Inserts a key-value pair into the hash table.
-    *   If the key already exists, update its value.
+    *   **Logic**:
+        *   Calculate the hash index using `hash_function`.
+        *   Access the bucket (list) at that index.
+        *   Iterate through the bucket to check if the `key` already exists.
+        *   If the key exists, update its `value`.
+        *   If the key does not exist, append the `(key, value)` tuple/list to the bucket.
     *   **Parameters**: `key`, `value`.
     *   **Returns**: None.
 
 4.  **`get(self, key)`**
     *   Retrieves the value associated with the key.
+    *   **Logic**:
+        *   Calculate the hash index.
+        *   Search the bucket at that index for the `key`.
+        *   Return the corresponding `value` if found.
     *   **Parameters**: `key`.
     *   **Returns**: The value if found, otherwise `None`.
 
 5.  **`remove(self, key)`**
     *   Removes the key-value pair from the hash table.
+    *   **Logic**:
+        *   Calculate the hash index.
+        *   Search the bucket for the `key`.
+        *   If found, remove the pair from the list and return `True`.
     *   **Parameters**: `key`.
     *   **Returns**: `True` if removed, `False` if key not found.
 
